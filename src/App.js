@@ -30,8 +30,6 @@ function App() {
             path="/ducks"
             element={<ShopCategory banner={duck_banner} category="ducks" />}
           ></Route>
-          {/* <Route path="/product" element={<Product />}></Route>
-          <Route path=":productId" element={<Product />}></Route> */}
           <Route path="/product/:productId" element={<Product />} />
           <Route path="/cart" element={<Cart />}></Route>
           <Route path="/login" element={<LoginSingup />}></Route>
