@@ -38,7 +38,7 @@ const Navbar = () => {
         >
           {" "}
           <Link style={{ textDecoration: "none" }} to="/">
-            Shop
+            Home
           </Link>
           {menu === "shop" ? <hr /> : <></>}
         </li>
@@ -88,6 +88,17 @@ const Navbar = () => {
             Contact
           </Link>
           {menu === "contact" ? <hr /> : <></>}
+        </li>
+        <li
+          onClick={() => {
+            setMenu("blogs");
+          }}
+        >
+          {" "}
+          <Link style={{ textDecoration: "none" }} to="/blogs">
+            Blog
+          </Link>
+          {menu === "blogs" ? <hr /> : <></>}
         </li>
       </ul>
 
