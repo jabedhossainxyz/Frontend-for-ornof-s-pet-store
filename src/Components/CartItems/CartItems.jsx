@@ -1,12 +1,48 @@
 import React, { useContext } from "react";
+import { useNavigate  } from "react-router-dom";
 import "./CartItems.css";
 import { ShopContext } from "../../Context/ShopContext";
 import remove_icon from "../Assets/cart_cross_icon.png";
 
 const CartItems = () => {
-  const { getTotalCartAmount, all_product, cartItems, removeFromCart } =
-    useContext(ShopContext);
+  const navigate  = useNavigate ();
 
+  const {
+    getTotalCartAmount,
+    all_product,
+    cartItems,
+    removeFromCart,
+    getUserId,
+  } = useContext(ShopContext);
+  const handlePayment = () => {
+    fetch("http://localhost:4000/pay", {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        userId: getUserId(), // Implement this function to get the user ID
+        cartItems: cartItems,
+      }),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        // Handle the response from the pay API
+        console.log(data);
+        // Redirect to payment page or handle as needed
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+        // Handle errors if any
+      });
+  };
+  const handleCheckout = () => {
+    handlePayment();
+
+    // Redirect to payment page after successful response
+    navigate.push("/payment"); // Change "/payment" to your payment page route
+  };
   return (
     <div className="cartitems">
       <div className="cartitems-format-main">

@@ -10,7 +10,8 @@ import Footer from "./Components/Footer/Footer";
 import cat_banner from "./Components/Assets/banner_mens.png";
 import fish_banner from "./Components/Assets/banner_women.png";
 import duck_banner from "./Components/Assets/banner_kids.png";
-
+import Contact from "./Pages/Contact";
+import Blog from "./Pages/Blog";
 function App() {
   return (
     <div>
@@ -30,6 +31,8 @@ function App() {
             path="/ducks"
             element={<ShopCategory banner={duck_banner} category="ducks" />}
           ></Route>
+          <Route path="/contact" Component={Contact} category="contact"></Route>
+          <Route path="/blogs" Component={Blog} category="blogs"></Route>
           <Route path="/product/:productId" element={<Product />} />
           <Route path="/cart" element={<Cart />}></Route>
           <Route path="/login" element={<LoginSingup />}></Route>
