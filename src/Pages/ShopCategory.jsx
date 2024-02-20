@@ -7,8 +7,10 @@ import Item from "../Components/Item/Item";
 const ShopCategory = (props) => {
   const { all_product } = useContext(ShopContext);
   console.log("Category:", props.category); // Log the category
-  
-  const filteredProducts = all_product.filter((item) => item.category === props.category);
+
+  const filteredProducts = all_product.filter(
+    (item) => item.category === props.category
+  );
 
   return (
     <div className="shop-category">
@@ -19,7 +21,8 @@ const ShopCategory = (props) => {
       ></img>
       <div className="shopcategory-indexSort">
         <p>
-          <span>Showing 1-{filteredProducts.length}</span> out of {all_product.length} products
+          <span>Showing 1-{filteredProducts.length}</span> out of{" "}
+          {all_product.length} products
         </p>
         <div className="shopcategory-sort">
           Sort by <img src={dropdown_icon} alt="dropdown_icon"></img>
