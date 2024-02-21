@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import { ShopContext } from "../../Context/ShopContext";
 import nav_dropdown from "../Assets/nav_dropdown.png";
 const Navbar = () => {
-  const [menu, setMenu] = useState("shop");
+  const [menu, setMenu] = useState("home");
   const { getTotalCartItems } = useContext(ShopContext);
   const menuRef = useRef();
 
@@ -33,14 +33,26 @@ const Navbar = () => {
       <ul ref={menuRef} className="nav-menu">
         <li
           onClick={() => {
-            setMenu("shop");
+            setMenu("home");
           }}
         >
           {" "}
           <Link style={{ textDecoration: "none" }} to="/">
             Home
           </Link>
-          {menu === "shop" ? <hr /> : <></>}
+          {menu === "home" ? <hr /> : <></>}
+        </li>
+
+        <li
+          onClick={() => {
+            setMenu("pets");
+          }}
+        >
+          {" "}
+          <Link style={{ textDecoration: "none" }} to="/pets">
+            Pets
+          </Link>
+          {menu === "pets" ? <hr /> : <></>}
         </li>
 
         <li

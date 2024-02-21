@@ -1,0 +1,30 @@
+.pets {
+  margin-bottom: 200px;
+}
+
+.category-dropdown {
+  margin-top: 50px;
+  margin-left: 100px;
+}
+
+.category-dropdown button {
+  height: 50px;
+  width: 400px;
+  border: none;
+  font-weight: 500;
+  cursor: pointer;
+  font-size: 30px;
+  color: white;
+  background: #eb423f;
+}
+
+.category-menu {
+  list-style: none;
+}
+
+.category-menu li {
+  margin-top: 10px;
+  font-size: 20px;
+  padding: 10px;
+  cursor: pointer;
+}
