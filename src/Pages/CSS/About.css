@@ -1,0 +1,14 @@
+.about_container {
+  margin-top: 20px;
+  margin-bottom: 50px;
+  margin-left: 150px;
+  margin-right: 150px;
+}
+
+.about_container h1 {
+  text-align: center;
+}
+
+.about_container p {
+  justify-content: center;
+}
