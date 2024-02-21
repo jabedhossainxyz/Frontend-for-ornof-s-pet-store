@@ -55,7 +55,7 @@ const Navbar = () => {
           {menu === "pets" ? <hr /> : <></>}
         </li>
 
-        <li
+        {/* <li
           onClick={() => {
             setMenu("cats");
           }}
@@ -89,7 +89,7 @@ const Navbar = () => {
             Duck
           </Link>
           {menu === "ducks" ? <hr /> : <></>}
-        </li>
+        </li> */}
         <li
           onClick={() => {
             setMenu("contact");
