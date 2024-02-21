@@ -1,4 +1,3 @@
-import "./App.css";
 import Navbar from "./Components/Navbar/Navbar";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Shop from "./Pages/Shop";
@@ -12,6 +11,7 @@ import fish_banner from "./Components/Assets/banner_women.png";
 import duck_banner from "./Components/Assets/banner_kids.png";
 import Contact from "./Pages/Contact";
 import Blog from "./Pages/Blog";
+import About from "./Pages/About";
 function App() {
   return (
     <div>
@@ -33,6 +33,7 @@ function App() {
           ></Route>
           <Route path="/contact" Component={Contact} category="contact"></Route>
           <Route path="/blogs" Component={Blog} category="blogs"></Route>
+          <Route path="/about" Component={About}></Route>
           <Route path="/product/:productId" element={<Product />} />
           <Route path="/cart" element={<Cart />}></Route>
           <Route path="/login" element={<LoginSingup />}></Route>

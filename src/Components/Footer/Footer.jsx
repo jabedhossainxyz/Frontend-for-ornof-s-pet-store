@@ -15,9 +15,13 @@ const Footer = () => {
       </div>
       <ul className="footer-links">
         <li>Company</li>
-        <li>Products</li>
+        <li>
+          <Link to={"/"}>Products</Link>
+        </li>
         <li>Offices</li>
-        <li>About</li>
+        <li>
+          <Link to={"/about"}>About </Link>
+        </li>
         <li>
           <Link to="/contact">Contact</Link>
         </li>
@@ -37,7 +41,14 @@ const Footer = () => {
         <hr></hr>
         <p>
           Copyright @ 2024 - All Right Reserved to{" "}
-          <a href="https://www.linkedin.com/in/jabedhossain/">Jabed Hossain</a>.
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://www.linkedin.com/in/jabedhossain/"
+          >
+            Jabed Hossain
+          </a>
+          .
         </p>
       </div>
     </div>

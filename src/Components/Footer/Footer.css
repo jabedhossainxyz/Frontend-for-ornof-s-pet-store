@@ -70,6 +70,10 @@
   background: #c7c7c7;
 }
 
+.footer-copyright a {
+  text-decoration: none;
+}
+
 @media(max-width:800px) {
   .footer {
     gap: 20px
