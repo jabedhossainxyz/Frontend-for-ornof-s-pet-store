@@ -36,13 +36,25 @@ function App() {
             element={<ShopCategory banner={duck_banner} category="ducks" />}
           ></Route>
 
+          <Route
+            path="/birds"
+            element={<ShopCategory banner={duck_banner} category="birds" />}
+          ></Route>
+
+          <Route
+            path="/dogs"
+            element={<ShopCategory banner={duck_banner} category="dogs" />}
+          ></Route>
+
           <Route path="/contact" Component={Contact} category="contact"></Route>
 
           <Route path="/blogs" Component={Blog} category="blogs"></Route>
 
           <Route path="/about" Component={About}></Route>
 
-          <Route path="/pets" Component={Pets}> </Route>
+          <Route path="/pets" Component={Pets}>
+            {" "}
+          </Route>
 
           <Route path="/product/:productId" element={<Product />} />
 

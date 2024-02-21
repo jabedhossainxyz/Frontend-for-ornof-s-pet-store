@@ -19,14 +19,28 @@ const Pets = () => {
                 Cats
               </Link>
             </li>
+            
             <li>
               <Link to="/fishs" style={{ textDecoration: "none" }}>
                 Fishs
               </Link>
             </li>
+
             <li>
               <Link to="/ducks" style={{ textDecoration: "none" }}>
                 Ducks
+              </Link>
+            </li>
+
+            <li>
+              <Link to="/birds" style={{ textDecoration: "none" }}>
+                Birds
+              </Link>
+            </li>
+
+            <li>
+              <Link to="/dogs" style={{ textDecoration: "none" }}>
+                Dogs
               </Link>
             </li>
           </ul>
