@@ -5,6 +5,7 @@ const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    phone: "",
     message: "",
   });
 
@@ -17,7 +18,7 @@ const Contact = () => {
 
     try {
       // Send form data to the server for processing
-      const response = await fetch("/api/sendEmail", {
+      const response = await fetch("http://localhost:4000/sendEmail", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -32,6 +33,7 @@ const Contact = () => {
         setFormData({
           name: "",
           email: "",
+          phone: "",
           message: "",
         });
       } else {
@@ -66,6 +68,17 @@ const Contact = () => {
             autoComplete="off"
             placeholder="Email"
             value={formData.email}
+            onChange={handleChange}
+            required
+          />
+          <label htmlFor="phone">Phone:</label>
+          <input
+            type="number"
+            id="phone"
+            name="phone"
+            autoComplete="off"
+            placeholder="Phone Number"
+            value={formData.phone}
             onChange={handleChange}
             required
           />
