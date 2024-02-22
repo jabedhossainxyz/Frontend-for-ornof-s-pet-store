@@ -10,6 +10,8 @@ const Navbar = () => {
   const [menu, setMenu] = useState("home");
   const { getTotalCartItems } = useContext(ShopContext);
   const menuRef = useRef();
+  const dropdownRef = useRef();
+  const [showDropdown, setShowDropdown] = useState(false);
 
   const dropdown_toggle = (e) => {
     menuRef.current.classList.toggle("nav-menu-visible");
@@ -26,6 +28,7 @@ const Navbar = () => {
       <img
         className="nav-dropdown"
         onClick={dropdown_toggle}
+        // onClick={toggleDropdown}
         src={nav_dropdown}
         alt="nav_dropdown"
       ></img>
@@ -34,6 +37,7 @@ const Navbar = () => {
         <li
           onClick={() => {
             setMenu("home");
+            setShowDropdown(false);
           }}
         >
           {" "}
@@ -46,6 +50,29 @@ const Navbar = () => {
         <li
           onClick={() => {
             setMenu("pets");
+            setShowDropdown(false);
+          }}
+          onMouseEnter={() => setShowDropdown(true)}
+          onMouseLeave={() => setShowDropdown(false)}
+        >
+          <Link style={{ textDecoration: "none" }} to="/pets">
+            Pets
+          </Link>
+          {menu === "pets" ? <hr /> : <></>}
+          {showDropdown && (
+            <div ref={dropdownRef} className="dropdown-content">
+              <Link to="/cats">Cats</Link>
+              <Link to="/fishs">Fishs</Link>
+              <Link to="/ducks">Ducks</Link>
+              <Link to="/birds">Birds</Link>
+              <Link to="/dogs">Dogs</Link>
+            </div>
+          )}
+        </li>
+
+        {/* <li
+          onClick={() => {
+            setMenu("pets");
           }}
         >
           {" "}
@@ -53,46 +80,11 @@ const Navbar = () => {
             Pets
           </Link>
           {menu === "pets" ? <hr /> : <></>}
-        </li>
-
-        {/* <li
-          onClick={() => {
-            setMenu("cats");
-          }}
-        >
-          {" "}
-          <Link style={{ textDecoration: "none" }} to="/cats">
-            Cat
-          </Link>
-          {menu === "cats" ? <hr /> : <></>}
-        </li>
-
-        <li
-          onClick={() => {
-            setMenu("fishs");
-          }}
-        >
-          {" "}
-          <Link style={{ textDecoration: "none" }} to="/fishs">
-            Fish
-          </Link>
-          {menu === "fishs" ? <hr /> : <></>}
-        </li>
-
-        <li
-          onClick={() => {
-            setMenu("ducks");
-          }}
-        >
-          {" "}
-          <Link style={{ textDecoration: "none" }} to="/ducks">
-            Duck
-          </Link>
-          {menu === "ducks" ? <hr /> : <></>}
         </li> */}
         <li
           onClick={() => {
             setMenu("contact");
+            setShowDropdown(false);
           }}
         >
           {" "}
@@ -104,6 +96,7 @@ const Navbar = () => {
         <li
           onClick={() => {
             setMenu("blogs");
+            setShowDropdown(false);
           }}
         >
           {" "}
