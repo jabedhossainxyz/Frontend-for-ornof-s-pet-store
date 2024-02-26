@@ -1,0 +1,32 @@
+.blog {
+  margin-top: 15px;
+  margin-left: 50px;
+  margin-right: 10px;
+  margin-bottom: 50px;
+}
+
+.blog-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.blog-item {
+  flex: 0 0 calc(50% - 20px);
+}
+
+.blog-heading {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.blog-title,
+.blog-author,
+.video-link,
+.blog-date {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.blog-date {
+  margin-bottom: 40px;
+}
