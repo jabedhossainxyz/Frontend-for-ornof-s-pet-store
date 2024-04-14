@@ -24,6 +24,9 @@ const ShopCategory = (props) => {
           <span>Showing 1-{filteredProducts.length}</span> out of{" "}
           {all_product.length} products
         </p>
+        <div className="shopcategory-search">
+          <input type="text" placeholder="Search..." />
+        </div>
         <div className="shopcategory-sort">
           Sort by <img src={dropdown_icon} alt="dropdown_icon"></img>
         </div>

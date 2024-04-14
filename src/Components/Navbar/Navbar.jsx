@@ -28,7 +28,6 @@ const Navbar = () => {
       <img
         className="nav-dropdown"
         onClick={dropdown_toggle}
-        // onClick={toggleDropdown}
         src={nav_dropdown}
         alt="nav_dropdown"
       ></img>
@@ -70,17 +69,6 @@ const Navbar = () => {
           )}
         </li>
 
-        {/* <li
-          onClick={() => {
-            setMenu("pets");
-          }}
-        >
-          {" "}
-          <Link style={{ textDecoration: "none" }} to="/pets">
-            Pets
-          </Link>
-          {menu === "pets" ? <hr /> : <></>}
-        </li> */}
         <li
           onClick={() => {
             setMenu("contact");
@@ -106,7 +94,7 @@ const Navbar = () => {
           {menu === "blogs" ? <hr /> : <></>}
         </li>
       </ul>
-
+      
       <div className="nav-login-cart">
         {localStorage.getItem("auth-token") ? (
           <button
