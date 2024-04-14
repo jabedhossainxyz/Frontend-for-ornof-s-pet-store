@@ -10,6 +10,27 @@
   justify-content: space-between;
   align-items: center;
 }
+.shopcategory-search {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  border-radius: 40px;
+  -webkit-border-radius: 40px;
+  -moz-border-radius: 40px;
+  -ms-border-radius: 40px;
+  -o-border-radius: 40px;
+  border: 1px solid #888;
+  margin-left: 500px;
+}
+
+.shopcategory-search input[type="text"] {
+  flex: 1;
+  border: none;
+  outline: none;
+  margin-left: 10px; 
+  color: #888;
+}
+
 
 .shopcategory-sort {
   padding: 10px 20px;

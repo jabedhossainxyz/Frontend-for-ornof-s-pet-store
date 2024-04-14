@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import "./CSS/ShopCategory.css";
 import { ShopContext } from "./../Context/ShopContext";
 import dropdown_icon from "../Components/Assets/dropdown_icon.png";
@@ -7,10 +7,16 @@ import Item from "../Components/Item/Item";
 const ShopCategory = (props) => {
   const { all_product } = useContext(ShopContext);
   console.log("Category:", props.category); // Log the category
+  
+  const [searchQuery, setSearchQuery] = useState("");
 
   const filteredProducts = all_product.filter(
-    (item) => item.category === props.category
+    (item) => item.category === props.category &&
+    item.name.toLowerCase().includes(searchQuery.toLowerCase())
   );
+  const handleSearchChange = (e) => {
+    setSearchQuery(e.target.value);
+  };
 
   return (
     <div className="shop-category">
@@ -24,13 +30,22 @@ const ShopCategory = (props) => {
           <span>Showing 1-{filteredProducts.length}</span> out of{" "}
           {all_product.length} products
         </p>
+
+        {/* search bar */}
         <div className="shopcategory-search">
-          <input type="text" placeholder="Search..." />
+          <input
+            type="text"
+            placeholder="Search..."
+            value={searchQuery}
+            onChange={handleSearchChange}
+          />
         </div>
+
         <div className="shopcategory-sort">
           Sort by <img src={dropdown_icon} alt="dropdown_icon"></img>
         </div>
       </div>
+
       <div className="shopcategory-products">
         {filteredProducts.map((item) => (
           <Item
